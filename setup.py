@@ -21,7 +21,8 @@ else:
 
 
 install_requires = [
-    'Django >= 1.10.0'
+    'Django >= 1.10.0',
+    'GitPython >= 2.1.1',
 ]
 test_requires = []
 
@@ -36,7 +37,11 @@ setup(
     ),
     license="MIT",
     url="https://github.com/samupl/django-asset-versions",
-    packages=find_packages('asset_versions'),
+    packages=[
+        'asset_versions',
+        'asset_versions.templatetags',
+        'asset_versions.backends',
+    ],
     long_description=read('README.md'),
     install_requires=install_requires,
     extras_require={
@@ -45,7 +50,7 @@ setup(
         ]
     },
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
